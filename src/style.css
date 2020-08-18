@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  background-image: url(../dist/img/background-image.jpg);
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+}
+
+/*
+  n
+  a
+  n
+*/
+nav {
+  min-height: 5em;
+  position: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  nav {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brand {
+  text-align: center;
+  font-weight: 500;
+}
+
+.brand > p {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.links {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.links > div {
+  height: 100%;
+  margin: 0 1em;
+  border: 3px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.linkEnterMouse {
+  animation: 0.2s linear 0s normal forwards running enterMouse;
+}
+
+.linkLeaveMouse {
+  animation: 0.2s linear 0s normal forwards running leaveMouse;
+}
+
+.linkClicked {
+  color: orange !important;
+  border-bottom: 3px solid orange !important;
+}
+
+@keyframes enterMouse {
+  0% {
+    color: white;
+  }
+  100% {
+    color: orange;
+    border-bottom: 3px solid orange;
+  }
+}
+
+@keyframes leaveMouse {
+  0% {
+    color: orange;
+    border-bottom: 3px solid orange;
+  }
+  100% {
+    color: white;
+  }
+}
+
+/*
+  c
+  o
+  n
+  t
+  e
+  n
+  t
+*/
+
+#content{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home{
+  color: white;
+  position: relative;
+  animation: 2s ease 0s normal forwards running down;
+}
+
+@keyframes down{
+  0%{
+    top: -100px;
+    opacity: 0;
+  }
+  100%{
+    top: 0px;
+  }
+}
+
+.welcome{
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-size: 1.5rem;
+}
+
+.name{
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: center;
+  border-top: 1px solid rgba(200, 200, 200, 0.9);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.9);
+  text-shadow: 0 9px 5px black
+}
+
+
