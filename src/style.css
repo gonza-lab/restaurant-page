@@ -6,7 +6,7 @@
 
 html{
   height: 100%;
-  background-image: url(../dist/img/background-image.jpg);
+  background-image: url(./img/background-image.jpg);
   background-size: cover;
   background-position: center center;
   z-index: -1;
@@ -118,8 +118,19 @@ nav {
   align-items: center;
 }
 
+/*
+  h
+  o
+  m
+  e
+*/
+
 .home{
   color: white;
+  position: relative;
+}
+
+.name, .welcome {
   position: relative;
   animation: 2s ease 0s normal forwards running down;
 }
@@ -138,6 +149,7 @@ nav {
   text-align: center;
   margin-bottom: 0.5em;
   font-size: 1.5rem;
+  font-weight: 300;
 }
 
 .name{
@@ -146,7 +158,138 @@ nav {
   text-align: center;
   border-top: 1px solid rgba(200, 200, 200, 0.9);
   border-bottom: 1px solid rgba(200, 200, 200, 0.9);
-  text-shadow: 0 9px 5px black
+  text-shadow: 0 9px 5px black;
+  color: orange;
 }
 
+.info{
+  text-align: center;
+  font-size: 1.5rem;
+  text-align: center;
+  animation: 1s ease 0s normal forwards running up;
+  position: relative;
+}
+
+@keyframes up {
+  0%{
+    top: 100px;
+    opacity: 0;
+  }
+  100%{
+    top: 0px;
+  }
+}
+
+@media (max-width: 700px){
+  :root{
+    font-size: 12px;
+  }
+}
+
+/*
+  m
+  e
+  n
+  u
+*/
+
+.menu{
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 800px;
+  width: 100%;
+}
+
+.section{
+  max-width: 600px;
+  width: 100%;
+}
+
+.section>p{
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 1em;
+  background-color: black;
+  position: relative;
+  animation: 2s ease 0s normal forwards running down;
+}
+
+.section>ul{
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  font-size: 1.4rem;
+  position: relative;
+  animation: 1s ease 0s normal forwards running up;
+  padding: 0 1em;
+  font-weight: 300;
+}
+
+.section>ul>li{
+  padding: 0.5em 0;
+}
+
+li + li{
+  border-top: 1px solid gray;
+}
+
+/*
+  a
+  b
+  o
+  u
+  t
+*/
+
+.contact{
+  color: black;
+  padding: 1.2em 1em;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 0 5px 5px white;
+  animation: 1s ease 0s normal forwards running fromShadows;
+}
+
+.header, .sub, .icons{
+  animation: 4s ease 0s normal forwards running fromShadows;
+}
+
+@keyframes fromShadows{
+  0%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+
+.header{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.sub{
+  font-size: 1.5rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.icons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.icons>a{
+  color: black;
+}
+
+a + a {
+  margin-left: 0.5em;
+}
 

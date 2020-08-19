@@ -1,26 +1,42 @@
-/* import './style.css' */
+import './style.css'
+import {
+  home as homeButton,
+  menu as menuButton,
+  contact as contactButton,
+} from "./nav.js";
+import home from "./home.js";
+import menu from "./menu.js";
+import contact from "./contact.js";
 
-const nav = document.querySelector("nav");
-const sections = nav.querySelectorAll(".links>div");
+const content = (function () {
+  const contentEl = document.querySelector("#content");
 
-sections.forEach((span) => {
-  span.addEventListener("mouseenter", (event) => {
-    event.target.classList.remove("linkLeaveMouse");
-    event.target.classList.add("linkEnterMouse");
-  });
-  span.addEventListener("mouseleave", (event) => {
-    event.target.classList.remove("linkEnterMouse");
-    event.target.classList.add("linkLeaveMouse");
-  });
-  span.addEventListener("click", (event) => {
-    sections.forEach((span) => {
-      if(event.target === span){
-        span.classList.add("linkClicked");
-      } else {
-        span.classList.remove("linkClicked");
-      }
-    })
-  })
+  function addElement(element) {
+    contentEl.appendChild(element);
+  }
+
+  function removeAll() {
+    if (contentEl.children[0]) {
+      contentEl.removeChild(contentEl.children[0]);
+    }
+  }
+
+  return { addElement, removeAll };
+})();
+
+homeButton.addEventListener("click", (e) => {
+  content.removeAll();
+  content.addElement(home);
 });
 
+menuButton.addEventListener("click", (e) => {
+  content.removeAll();
+  content.addElement(menu);
+});
 
+contactButton.addEventListener("click", (e) => {
+  content.removeAll();
+  content.addElement(contact);
+});
+
+homeButton.click();
